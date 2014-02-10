@@ -1,0 +1,123 @@
+.jcarousel-skin-tango-two .jcarousel-container {
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	
+}
+.jcarousel-skin-tango-two .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-skin-tango-two .jcarousel-container-horizontal {
+    width: 100%;
+	text-align: left;
+	float: left;
+}
+.jcarousel-skin-tango-two .jcarousel-container-horizontal strong {
+	font-size: 13px;
+	color: #22221e;
+	display: block;
+	margin-top: 4px;
+	font-family: 'Open Sans';
+	font-weight: normal;
+	margin-left: 15px;
+}
+
+.jcarousel-skin-tango-two .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-tango-two .jcarousel-clip-horizontal {
+    width: 100%;
+}
+
+
+.jcarousel-skin-tango-two .jcarousel-item {
+    width: 440px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+
+.jcarousel-skin-tango-two .jcarousel-item-horizontal {
+	margin-left: 5px;
+    margin-right: 20px;
+}
+
+.jcarousel-skin-tango-two .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.jcarousel-skin-tango-two .jcarousel-item-placeholder {
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-tango-two .jcarousel-next-horizontal {
+	position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 30px;
+    height: 32px;
+    cursor: pointer;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+    background: #f4f4f4 url(../../images/arrow-3.png) no-repeat center 10px;
+}
+
+.jcarousel-skin-tango-two .jcarousel-next-horizontal:hover,
+.jcarousel-skin-tango-two .jcarousel-next-horizontal:focus {
+    background: #eee url(../../images/arrow-3.png) no-repeat center 10px;
+}
+
+.jcarousel-skin-tango-two .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 30px;
+    height: 32px;
+    cursor: pointer;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+    background: #f4f4f4 url(../../images/arrow-2.png) no-repeat center 10px;
+}
+
+.jcarousel-skin-tango-two .jcarousel-prev-horizontal:hover, 
+.jcarousel-skin-tango-two .jcarousel-prev-horizontal:focus {
+    background: #eee url(../../images/arrow-2.png) no-repeat center 10px;
+}
+
+
+@media only screen and (min-width: 1000px){}
+@media only screen and (min-width: 768px) and (max-width: 999px){
+
+
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+
+.jcarousel-skin-tango-two .jcarousel-next-horizontal {
+    left: 380px;
+}
+
+.jcarousel-skin-tango-two .jcarousel-prev-horizontal {
+    left: 0px;
+}
+
+}
+
+
+@media only screen and (max-width: 479px){
+
+.jcarousel-skin-tango-two .jcarousel-next-horizontal {
+    left: 240px;
+}
+
+.jcarousel-skin-tango-two .jcarousel-prev-horizontal {
+    left: 0px;
+}
+	
+}

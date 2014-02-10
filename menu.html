@@ -1,0 +1,426 @@
+<?php 
+$name_of_your_site = "yourcompanyname.com"; 
+$email_adress_reciever = "gsrthemes9@gmail.com";
+
+if(isset($_POST['Send']))
+{
+    include('send.php');    
+}
+?>
+<!doctype html>
+<!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-gb" class="no-js"> <!--<![endif]-->
+
+<head>
+
+    <title>Menu</title>
+    
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="images/favicon.ico">
+    
+    <!-- this styles only adds some repairs on idevices  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- Google fonts - witch you want to use - (rest you can just remove) -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Archivo+Narrow|Oswald:400,700' rel='stylesheet' type='text/css'>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- ######### CSS STYLES ######### -->
+    
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    
+    <!-- responsive devices styles -->
+    <link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />  
+
+<!-- just remove the below comments witch color skin you want to use -->
+    <!--<link rel="stylesheet" href="css/colors/lightblue.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/orange.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/blue.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/green.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/red.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/cyan.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/purple.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/yellow.css" />-->
+    <!--<link rel="stylesheet" href="css/colors/brown.css" />-->
+
+<!-- just remove the below comments witch bg patterns you want to use -->  
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-default.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-one.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-two.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-three.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-four.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-five.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-six.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-seven.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-eight.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-patterns/pattern-nine.css" />-->
+    
+<!-- just remove the below comments witch bg images you want to use -->  
+    <!--<link rel="stylesheet" href="css/bg-images/bgimages-one.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-images/bgimages-two.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-images/bgimages-three.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-images/bgimages-four.css" />-->
+    <!--<link rel="stylesheet" href="css/bg-images/bgimages-five.css" />-->
+    
+    <!-- REVOLUTION SLIDER -->
+    <link rel="stylesheet" type="text/css" href="js/revolutionslider/css/fullwidth.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="js/revolutionslider/rs-plugin/css/settings.css" media="screen" />
+    
+    <!-- style switcher -->
+    <link rel = "stylesheet" media = "screen" href = "js/style-switcher/color-switcher.css" />
+    
+    <!-- jquery jcarousel -->
+    <link rel="stylesheet" type="text/css" href="js/jcarousel/skin.css" />
+    <link rel="stylesheet" type="text/css" href="js/jcarousel/skintwo.css" />
+    
+    <!-- faqs -->
+    <link rel="stylesheet" href="js/accordion/accordion.css" type="text/css" media="all">
+    
+    <!-- jquery search -->
+    <link rel="stylesheet" href="js/jquerysearch/style.css" type="text/css" media="all">
+    
+</head>
+
+<body>
+
+<div class="site_wrapper">
+<div class="boxed_wrapper">
+    
+    <div class="container_full">
+        
+        <div class="top_section">
+ 
+            <div id="logo">
+                <a href="index.php" class="site_logo">
+                    <img src="images/logo.png" width="250">
+                </a>
+            </div><!-- end logo -->
+            
+            <div class="top_contact_info">
+            
+                    <ul class="tci_list">
+                        <li class="email"><a href="#">contacto@altopiacere.cl</a></li>
+                        <li class="phone">032-89000</li>
+                        <li><a href="#"><img src="images/top_si1.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/top_si2.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/top_si3.png" alt="" /></a></li>
+                        <li><a href="#"><img src="images/top_si4.png" alt="" /></a></li>
+                     
+                    </ul>
+                 
+                 <div class="clearfix"></div>
+                        
+                <div class="ani_search">
+                    <form id="searchForm">
+                        <fieldset>
+                            <div class="input">
+                                <input type="text" name="s" id="s" value="" />
+                            </div>
+                            <input type="submit" id="searchSubmit" value="" />
+                        </fieldset>
+                    </form>
+                </div>
+                      
+            </div><!-- end top contact info -->
+        
+        </div>
+
+     <nav id="access" class="access" role="navigation">
+                <div id="menu" class="menu">
+                    
+                    <ul id="tiny">
+                    
+                        <li><a href="index.html" class="active">Home</a></li>  
+                        
+                        <li><a href="menu.html">Menu</a>
+                      
+                        </li>
+                        <li><a href="productos.html">Galeria de productos</a>
+                      
+                        </li>
+                        
+                        <li><a href="#">Locales</a>
+                      
+                        </li>
+                        
+                        <li><a href="promociones.html">Promociones</a>
+                        
+                        </li>
+                        
+                        <li><a href="historia.html">Historia</a>
+                        
+                        
+                        </li>
+                        
+                     
+                        <li><a href="contact-2.html">Contacto</a>
+                        
+                        </li>
+                        
+                        
+                    
+                         
+                    </ul>
+                </div>
+                
+          </nav>  
+
+</div><!-- end top -->
+
+
+<!-- Content
+======================================= -->
+
+<div class="page_title">
+
+	<div class="container">
+		<div class="leaft_title"><h1>Menu de Alto Piacere</h1></div>
+        <div class="reght_pagenation"><a href="index.php">Home</a>  <i>/Menu</i></div>
+	</div>
+    
+</div><!-- end page title -->   
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+<!-- left sidebar starts -->
+<div class="left_sidebar">
+
+	<div class="sidebar_widget">
+    	<h3>Categoria</h3>
+		<ul class="arrows_list1">		
+            <li><a href="#">Pizzas</a></li>
+            <li><a href="#">Pastas</a></li>
+            <li><a href="#">Ensaladas</a></li>
+            <li><a href="#">Agregados</a></li>
+            <li><a href="#">Bebidas</a></li>
+            <li><a href="#">Helados</a></li>
+        
+		</ul>
+	</div><!-- end section -->
+    
+    <div class="clearfix mar_top3"></div>
+    
+
+	
+</div><!-- end left sidebar -->
+
+
+<div class="content_right">
+    
+  
+
+</div><!-- end content left side area -->
+
+
+
+</div><!-- end contant area -->
+ 
+
+
+
+<div class="container_full">
+
+	<div class="bottom_banner_section">
+    	
+        <div class="one_third left"><strong>Responsive Layouted <i>Desktop, Tablet and Mobile phones</i></strong></div>
+        <div class="one_third center"><img src="http://placehold.it/124x96" alt="" /></div>
+        <div class="one_third last right"><strong>Start Your Website Now! <i>Esay-to-Use, Smart and Flexible Design</i></strong></div>
+        
+    </div>
+
+</div><!-- end bottom banner section -->
+
+
+
+</div>
+</div>
+<!-- Footer
+======================================= -->
+
+<div class="footer_boxed">
+
+<div class="footer">
+    
+    <div class="footer_center">
+    
+        <div class="one_fourth">
+        <h2>Alto Piacere</h2>
+        <div class="dh_line"></div>
+            <ul class="address-liste">
+                <li class="icon1">Av Reñaca - Con con ,<br />Valparaiso, Chile</li>
+                <li class="icon2">1234-567-89000</li>
+                <li class="icon3">0123-4567-8900</li>
+                <li class="worldmap"></li>
+            </ul>
+        </div><!-- end address info -->
+        
+        <div class="one_fourth">
+        <h2>Siguenos</h2>
+        <div class="dh_line"></div>
+            <ul class="socials-list">
+                <li><a href="#" title="facebook"><img src="images/footer-socials-01.png" alt="" />Connect with Facebook</a></li>
+                <li><a href="#" title="twitter"><img src="images/footer-socials-02.png" alt="" />Follow on Twitter</a></li>
+                <li><a href="#" title="google plus"><img src="images/footer-socials-03.png" alt="" />Sharing on Google+</a></li>
+                <li><a href="#" title="you tube"><img src="images/footer-socials-04.png" alt="" />Connect with Linkedin</a></li>
+                </ul>
+        </div>
+        
+        
+        <div class="one_fourth">
+        <h2>Noticias de Twitter</h2>
+        <div class="dh_line"></div>
+        
+        <div class="twitter_feed">
+        
+        <p><script src="js/twitter/widget.js"></script>
+                <script>
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'profile',
+                  rpp: 2,
+                  interval: 5000,
+                  width: 250,
+                  height: 270,
+                  theme: {
+                    shell: {
+                      background: 'transparent',
+                      color: '#333'
+                    },
+                    tweets: {
+                      background: 'transparent',
+                      color: '#999',
+                      links: '#727272'
+                    }
+                  },
+                  features: {
+                    scrollbar: false,
+                    loop: false,
+                    live: false,
+                    hashtags: true,
+                    timestamp: true,
+                    avatars: false,
+                    behavior: 'all'
+                  }
+                }).render().setUser('gsrthemes9').start();
+                </script>
+            </p>
+            
+        </div>
+        
+        </div>
+        
+        
+        <div class="one_fourth last">
+        <h2>Galeria</h2>
+        <div class="dh_line"></div>
+        
+            <div id="flickr_badge_wrapper">
+                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=s&amp;layout=h&amp;source=user&amp;user=93382411%40N07"></script>
+            
+            </div>
+        
+        </div>
+
+    
+    </div>
+
+</div><!-- end footer all columns --> 
+
+
+<div class="copyright_info">
+
+    <div class="container_full">
+    
+    <div class="one_half"><b>Copyright © 2013 Alto Piacere. Todos los derechos reservados</b></div>
+  
+    
+    </div>
+    
+</div><!-- end copyright info -->
+
+</div><!-- end footer -->
+
+
+
+
+
+
+
+    
+<!-- ######### JS FILES ######### -->
+<!-- get jQuery from the google apis -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+
+<!-- style switcher -->
+<script src="js/style-switcher/jquery-1.js"></script>
+<script src="js/style-switcher/styleselector.js"></script>
+
+<!-- main menu -->
+<script type="text/javascript" src="js/mainmenu/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="js/mainmenu/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/mainmenu/selectnav.js"></script>
+
+<!-- jquery jcarousel -->
+<script type="text/javascript" src="js/jcarousel/jquery.jcarousel.min.js"></script>
+
+<script type="text/javascript" src="js/mainmenu/scripts.js"></script>
+
+<!-- top show hide plugin script-->
+<script src="js/show-hide-plugin/showHide.js" type="text/javascript"></script>
+
+
+<!-- scroll up -->
+<script type="text/javascript">
+    $(document).ready(function(){
+ 
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+ 
+        $('.scrollup').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 500);
+            return false;
+        });
+ 
+    });
+</script>
+
+
+<!-- jquery jcarousel -->
+<script type="text/javascript">
+
+	jQuery(document).ready(function() {
+			jQuery('#mycarousel').jcarousel();
+	});
+	
+	jQuery(document).ready(function() {
+			jQuery('#mycarouseltwo').jcarousel();
+	});
+	
+</script>
+
+<script type="text/javascript" src="js/accordion/custom.js"></script>
+
+
+
+
+</body>
+</html>
+
