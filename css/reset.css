@@ -30,7 +30,7 @@ body {
 }
 
 body, input, textarea {
-	font-family: 'Open Sans', sans-serif;
+	font-family: cursive;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 12px;
@@ -45,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Oswald', sans-serif;
+	font-family: cursive;
 	font-weight: normal;
 	color: #22221e;
 }
@@ -109,10 +109,10 @@ h2 i {
 
 /* Text elements */
 p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: cursive;
 	font-weight: normal;
 	font-style: normal;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 20px;
 	color: #454545;
 }
@@ -143,16 +143,16 @@ ul ul, ol ol, ul ol, ol ul {
 	margin-bottom: 0;
 }
 strong {
-	font-family: 'Open Sans' !important;
+	font-family: cursive;
 	font-weight: 600;
 	color: #454545;
 }
 p strong {
-	font-family: 'Open Sans' !important;
+	font-family: cursive;
 	font-weight: normal;
 	font-weight: 600;
 	color: #454545;
-	font-size: 13px;
+	font-size: 16px;
 	display: block;
 	margin-bottom: 12px;
 }

@@ -7,7 +7,7 @@
 	float: left;
 	padding: 0px;
 	margin: 0px 0px 0px 30px;
-	width: 27%;
+	width: 70%;
 	height: 100px;
 	position: absolute;
 	z-index: 999;
@@ -107,14 +107,13 @@ float: left;
 	font-weight: normal;
 	position: relative;
 	float: left;
-	margin-top: 40px;
-	font-family: 'Oswald', sans-serif;
+	margin-top: 20px;
+	font-family: cursive;
 	font-weight: normal;
-	text-transform: uppercase;
 	width: 1000px;
-	height: 62px;
+	height: 52px;
 	margin-left: -10px;
-	background: url(../images/menu-nav-bg.png) no-repeat center top;
+	background-color: #009246;
 	z-index: 1001;
 }
 #access .menu select {
@@ -140,12 +139,11 @@ float: left;
 	z-index: 101;
 	margin: 0px 0px 0px 1px;
 	float: left;
-	background: url(../images/menu-nav-divider.png) no-repeat right top;
 }
 #access .menu ul li a {
 	display: inline-block;
 	text-decoration: none;
-	font-size: 13px;
+	font-size: 14px;
 	letter-spacing: 1px;
 	line-height: 1;
 	color: #fff;
@@ -157,12 +155,12 @@ float: left;
 #access .menu ul li a:hover {
 	color: #fff;         
 	padding: 18px 20px 21px 20px;
-	background: url(../images/menu-nav-hover.png) repeat-x left top;
+	background-color: #ce2b37;
 } 
 #access .menu ul li a.active {
 	color: #fff;
 	padding: 18px 20px 21px 20px;
-	background: url(../images/menu-nav-hover.png) repeat-x left top;
+	background-color: #ce2b37;
 }
 
 #access .menu ul li ul {
@@ -246,7 +244,7 @@ float: left;
 	padding: 0px;
 	margin: 0px;
 	float: right;
-	width: 69.8%;
+	width: 10.8%;
 }
 ul.tci_list {
 	float: right;
@@ -254,11 +252,10 @@ ul.tci_list {
 	margin: 5px 18px 0px 0px;
 }
 .tci_list li {
-	float: left;
-	padding: 5px 0px 9px 0px;
-	margin: 0px 2px 0px 0px;
-	font-size: 11px;
-	color: #838383;
+	float: right;
+margin: 0px -10px -7px 1px;
+font-size: 11px;
+color: #838383;
 }
 .tci_list li img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
@@ -275,9 +272,9 @@ ul.tci_list {
 	margin-top: 2px;
 }
 .tci_list li a {
-	font-size: 11px;
-	color: #838383;
-	margin: 0px;
+	font-size: 14px;
+color: #FFFFFF;
+margin: 0px;
 }
 .tci_list li a:hover {
 	font-size: 11px;
@@ -291,9 +288,9 @@ ul.tci_list {
 }
 .tci_list li.phone {
 	float: left;
-	padding: 5px 0px 0px 22px;
-	margin: 0px 7px 0px 0px;
-	background: url(../images/phone-icon.png) no-repeat left 7px;
+padding: 0px 0px 15px 26px;
+margin: 0px -20px 0px 0px;
+font-size: 30px;
 }
 
 
@@ -633,9 +630,9 @@ ul.latest_newsblogs_list {
 .footer {
 	float: left;
 	width: 100%;
-	min-height: 400px;
+	min-height: 320px;
 	margin-top: -50px;
-	background-color: rgb(189, 33, 33);
+	background-color: #009246;
 	position: relative;
 	z-index: -1;
 }
@@ -645,7 +642,7 @@ ul.latest_newsblogs_list {
 }
 .footer h2 {
 	color: #fff;
-	background-color: #3e3e41;
+	background-color: #ce2b37;
 	padding: 10px 13px;
 	float: left;
 	margin-bottom: 25px;
@@ -830,7 +827,7 @@ ul.latest_newsblogs_list {
 	padding: 13px 0px 12px 0px;
 	margin: 0px 0px 0px 0px;
 	width: 100%;
-	background-color: rgb(189, 33, 33);
+	background-color: #ce2b37 ;
 	color: #535353;
 	border-top: 1px solid #2b272b;
 }
@@ -966,7 +963,7 @@ a.show_hide{
 	min-height: 54px;
 	padding-top: 30px;
 	background: url(../images/gray-bg2.jpg) repeat left top;
-	margin: 40px 0px 0px 0px;
+	margin: 60px 0px 0px 0px;
 	border-bottom: 1px solid #f3f1f1;
 }
 .page_title .leaft_title {
@@ -2288,7 +2285,7 @@ a.but_search:hover {
 a.but_phone {
 	padding: 10px 20px 10px 40px;
 	margin: 0px 0px 0px 0px;
-	background: #e56619 url(../images/elements/phone.png) no-repeat 16px 11px;
+	background: #ce2b37 url(../images/elements/phone.png) no-repeat 16px 11px;
 	border-bottom: 1px solid #909090;
 }
 a.but_phone:hover {
@@ -2846,7 +2843,8 @@ p.error {
 }
 .table-list th {
 	padding: 10px;
-	background-color: #eee;
+background-color: #009246;
+color: #fff;
 }
 .table-list td {
 	padding: 10px;
@@ -3668,11 +3666,10 @@ a.knowmore_but {
 	font-size: 14px;
 	color: #fff;
 	font-weight: 600;
-	background-color: #aeb405;
+	background-color: #009246 ;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	border-bottom: 1px solid #cc7a00;
 }
 a.knowmore_but:hover {
-	background-color: #b7bd01;
+	background-color: #ce2b37 ;
 }
