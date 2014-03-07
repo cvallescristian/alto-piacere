@@ -1,5 +1,9 @@
 /* http://meyerweb.com/eric/tools/css/reset/ */
 /* v1.0 | 20080212 */
+@font-face { font-family: "WalkwayBold"; src: url("../font/WalkwayBold.ttf") format ("ttf"); }
+
+@import url(http://fonts.googleapis.com/css?family=Mystery+Quest);
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,7 +34,7 @@ body {
 }
 
 body, input, textarea {
-	font-family: cursive;
+	font-family: "Mystery Quest";
 	font-weight: normal;
 	font-style: normal;
 	font-size: 12px;
@@ -45,7 +49,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: cursive;
+	font-family: "WalkwayBold";
 	font-weight: normal;
 	color: #22221e;
 }
@@ -109,7 +113,7 @@ h2 i {
 
 /* Text elements */
 p {
-	font-family: cursive;
+	font-family: "WalkwayBold";
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
@@ -143,12 +147,12 @@ ul ul, ol ol, ul ol, ol ul {
 	margin-bottom: 0;
 }
 strong {
-	font-family: cursive;
+	font-family: "WalkwayBold";
 	font-weight: 600;
 	color: #454545;
 }
 p strong {
-	font-family: cursive;
+	font-family: "WalkwayBold";
 	font-weight: normal;
 	font-weight: 600;
 	color: #454545;

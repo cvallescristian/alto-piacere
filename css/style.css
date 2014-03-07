@@ -1,6 +1,10 @@
 /*------------------*/
 /*	GENERAL
 /*------------------------------------------------------*/
+@font-face { font-family: "WalkwayBold"; src: url("WalkwayBold.ttf") format ("ttf"); }
+
+
+
 
 /* ----------- Logo ----------- */
 #logo {
@@ -12,6 +16,7 @@
 	position: absolute;
 	z-index: 999;
 }
+
 .site_logo {
 padding: 0px 0px 19px 14px;
 margin: 8px 0px 0px 0px;
@@ -108,12 +113,12 @@ float: left;
 	position: relative;
 	float: left;
 	margin-top: 20px;
-	font-family: cursive;
+	font-family: "WalkwayBold";
 	font-weight: normal;
 	width: 1000px;
 	height: 52px;
 	margin-left: -10px;
-	background-color: #009246;
+	background-color: #57993a;
 	z-index: 1001;
 }
 #access .menu select {
@@ -155,12 +160,12 @@ float: left;
 #access .menu ul li a:hover {
 	color: #fff;         
 	padding: 18px 20px 21px 20px;
-	background-color: #ce2b37;
+	background-color: #ff0000;
 } 
 #access .menu ul li a.active {
 	color: #fff;
 	padding: 18px 20px 21px 20px;
-	background-color: #ce2b37;
+	background-color: #ff0000;
 }
 
 #access .menu ul li ul {
@@ -632,7 +637,7 @@ ul.latest_newsblogs_list {
 	width: 100%;
 	min-height: 320px;
 	margin-top: -50px;
-	background-color: #009246;
+	background-color: #57993a;
 	position: relative;
 	z-index: -1;
 }
@@ -642,7 +647,7 @@ ul.latest_newsblogs_list {
 }
 .footer h2 {
 	color: #fff;
-	background-color: #ce2b37;
+	background-color: #ff0000;
 	padding: 10px 13px;
 	float: left;
 	margin-bottom: 25px;
@@ -827,7 +832,7 @@ ul.latest_newsblogs_list {
 	padding: 13px 0px 12px 0px;
 	margin: 0px 0px 0px 0px;
 	width: 100%;
-	background-color: #ce2b37 ;
+	background-color: #ff0000 ;
 	color: #535353;
 	border-top: 1px solid #2b272b;
 }
@@ -2843,7 +2848,7 @@ p.error {
 }
 .table-list th {
 	padding: 10px;
-background-color: #009246;
+background-color: #57993a;
 color: #fff;
 }
 .table-list td {
@@ -3666,7 +3671,7 @@ a.knowmore_but {
 	font-size: 14px;
 	color: #fff;
 	font-weight: 600;
-	background-color: #009246 ;
+	background-color: #57993a;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
