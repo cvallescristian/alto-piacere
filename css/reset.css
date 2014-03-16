@@ -1,6 +1,16 @@
 /* http://meyerweb.com/eric/tools/css/reset/ */
 /* v1.0 | 20080212 */
-@font-face { font-family: "WalkwayBold"; src: url("../font/WalkwayBold.ttf") format ("ttf"); }
+@font-face { 
+	font-family: "WalkwayBold"; 
+	src: url('../font/WalkwayBold.ttf');
+	
+}
+@font-face { 
+	font-family: "chocolate"; 
+	src: url('../font/Chocolate.ttf');
+	
+}
+
 
 @import url(http://fonts.googleapis.com/css?family=Mystery+Quest);
 
@@ -34,7 +44,7 @@ body {
 }
 
 body, input, textarea {
-	font-family: "Mystery Quest";
+	font-family: "WalkwayBold";
 	font-weight: normal;
 	font-style: normal;
 	font-size: 12px;
@@ -49,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "WalkwayBold";
+	font-family: "chocolate";
 	font-weight: normal;
 	color: #22221e;
 }
@@ -62,27 +72,27 @@ h6 a {
 	color: inherit; 
 }
 h1 { 
-	font-size: 20px; 
+	font-size: 45px; 
 	line-height: 20px; 
 	margin-bottom: 13px;
 	font-style: normal;
 }
 h2 { 
-	font-size: 16px; 
+	font-size: 38px; 
 	line-height: 16px; 
 	margin-bottom: 13px;
 	font-style: normal;
 	font-weight: normal;
 }
 h3 { 
-	font-size: 15px; 
+	font-size: 28px; 
 	line-height: 15px; 
 	margin-bottom: 15px;
 	font-weight: normal;
 	font-style: normal;
 }
 h4 { 
-	font-size: 14px; 
+	font-size: 18px; 
 	line-height: 14px; 
 	margin-bottom: 15px;
 	font-style: normal;
@@ -113,10 +123,10 @@ h2 i {
 
 /* Text elements */
 p {
-	font-family: "WalkwayBold";
+	font-family: "chocolate";
 	font-weight: normal;
 	font-style: normal;
-	font-size: 14px;
+	font-size: 20px;
 	line-height: 20px;
 	color: #454545;
 }
@@ -152,11 +162,11 @@ strong {
 	color: #454545;
 }
 p strong {
-	font-family: "WalkwayBold";
-	font-weight: normal;
+	font-family: "chocolate";
+	font-size: 26px;
+	text-align: justify;
 	font-weight: 600;
 	color: #454545;
-	font-size: 16px;
 	display: block;
 	margin-bottom: 12px;
 }

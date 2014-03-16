@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Contacto extends CI_Controller {
+class Locales extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,7 +20,7 @@ class Contacto extends CI_Controller {
 	public function index()
 	{
 		$this->load->view("layout/header");
-		$this->load->view('home/contacto');
+		$this->load->view('home/locales');
 		$this->load->view("layout/footer");
 	}
 }
