@@ -16,8 +16,8 @@
         <div class="dh_line"></div>
             <ul class="address-liste">
             	<li class="icon1">Av Reñaca - Con con ,<br />Valparaiso, Chile</li>
-                <li class="icon2">1234-567-89000</li>
-                <li class="icon3">0123-4567-8900</li>
+                <li class="icon2">Telefono: (32) 319 9428</li>
+                <li class="icon3"> E-mail: contacto@altopiacere.cl</li>
              
             </ul>
         </div><!-- end address info -->
@@ -34,56 +34,27 @@
         
         
         <div class="one_fourth">
-        <h2>Noticias de Twitter</h2>
+        <h2>Horario de Atención</h2>
         <div class="dh_line"></div>
-        
-        <div class="twitter_feed">
-        
-        <p><script src="js/twitter/widget.js"></script>
-                <script>
-                new TWTR.Widget({
-                  version: 2,
-                  type: 'profile',
-                  rpp: 2,
-                  interval: 5000,
-                  width: 250,
-                  height: 270,
-                  theme: {
-                    shell: {
-                      background: 'transparent',
-                      color: '#333'
-                    },
-                    tweets: {
-                      background: 'transparent',
-                      color: '#999',
-                      links: '#727272'
-                    }
-                  },
-                  features: {
-                    scrollbar: false,
-                    loop: false,
-                    live: false,
-                    hashtags: true,
-                    timestamp: true,
-                    avatars: false,
-                    behavior: 'all'
-                  }
-                }).render().setUser('gsrthemes9').start();
-                </script>
-            </p>
-            
-        </div>
+        <ul class="address-liste">
+              <li >Hotario de atención</li><br>
+                <li >Lunes a Viernes  10am to 1am</li>
+                <li >Sabado 10am to 2pm</li>
+                <li>Domingo 10am to 2pm</li>
+             
+            </ul>    
         
         </div>
         
         
         <div class="one_fourth last">
-        <h2>Galeria</h2>
+        <h2>Delivery</h2>
         <div class="dh_line"></div>
-        
-        	<div id="flickr_badge_wrapper">
-            	
-            </div>
+         <ul class="address-liste">
+              <li >Reparto Gratis a todo Con Con y Reñaca por Compras sobre $ 5.000 Llámanos al (032) 319 9428 o simplemente solicita tu pedido por inbox Puedes pagar con REDCOMPRA </li><br>
+          
+             
+            </ul> 
         
         </div>
 

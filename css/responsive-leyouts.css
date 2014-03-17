@@ -996,7 +996,7 @@ ul.adsbanner-list {
 
 
 
-@media only screen and (max-width: 479px){
+@media only screen and (max-width: 480px){
 	
 
 /* Disable menu */
@@ -1022,6 +1022,9 @@ ul.adsbanner-list {
 }
 #access .menu ul {
 	width: 300px;
+}
+.altopiacere{
+	display: none !important;
 }
 
 .site_wrapper {
@@ -1066,7 +1069,7 @@ ul.adsbanner-list {
 
 
 #logo {
-	margin: 20px 0px 0px 101px;
+	margin: 0px 0px 0px 20px;
 }
 .site_logo {
 	margin: 5px 0px 0px 0px;
@@ -1432,8 +1435,8 @@ ul.fullimage_box.last {
 .page_title .leaft_title {
 	width: 55%;
 }
-.page_title .leaft_title h1 { 
-	font-size: 18px;
+.page_title .leaft_title h1 {
+font-size: 32px;
 }
 .page_title .reght_pagenation {
 	font-size: 9px;

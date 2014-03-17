@@ -97,7 +97,7 @@
                 <a href="home" class="site_logo">
                     <img src="images/logo.png" width="230">
                 </a>
-                 <a href="home" class="site_logo">
+                 <a href="home" class="site_logo altopiacere">
                     <img src="images/altopiacere3.png" width="340">
                 </a>
             </div><!-- end logo -->
