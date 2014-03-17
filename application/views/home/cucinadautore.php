@@ -6,7 +6,6 @@
 	<div class="container">
 
 		<div class="leaft_title"><h1>Historia de Alto Piacere</h1></div>
-        <div class="reght_pagenation"><a href="index.php">Home</a>   <i>/</i> Historia</div>
 	</div>
 </div><!-- end page title -->    
 

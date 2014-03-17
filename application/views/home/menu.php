@@ -7,7 +7,6 @@
 
 	<div class="container">
 		<div class="leaft_title"><h1>Menu de Alto Piacere</h1></div>
-        <div class="reght_pagenation"><a href="index.php">Home</a>  <i>/Menu</i></div>
 	</div>
     
 </div><!-- end page title -->   
@@ -45,61 +44,70 @@
                     <tbody><tr>
                         <th>Nombre</th>
                         <th>Ingredientes</th>
-                        <th>Precio</th>
+                        <th>Mediana</th>
+                        <th>Familiar</th>
                         
                     </tr>
                     <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                      <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                      <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
+                       <td>$ 9000</td>
+                    </tr>
+                     <tr>
+                       <td class="green">Margharita</td>
+                        <td>Tomate, Queso, Albaca</td>
+                        <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                      <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                      <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                      <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                      <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                      <tr>
-                        <td>Margharita</td>
+                        <td class="green">Margharita</td>
                         <td>Tomate, Queso, Albaca</td>
                         <td>$ 6000</td>
-                       
-                    </tr>
-                     <tr>
-                        <td>Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
+                        <td>$ 9000</td>
                        
                     </tr>
                     

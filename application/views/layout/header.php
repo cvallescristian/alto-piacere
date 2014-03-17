@@ -106,7 +106,9 @@
             
                     <ul class="tci_list">
                         <li class="">
-                            <img src="images/fb2.png" height="33" >
+                            <a href="https://www.facebook.com/AltoPiacere?fref=ts">
+                                <img src="images/fb2.png" height="33" >
+                            </a>
                         </li>
                         <li class="">
                             <img src="images/fono.png" >

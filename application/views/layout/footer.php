@@ -26,10 +26,9 @@
         <h2>Siguenos</h2>
         <div class="dh_line"></div>
         	<ul class="socials-list">
-                <li><a href="#" title="facebook"><img src="images/footer-socials-01.png" alt="" />Connect with Facebook</a></li>
-                <li><a href="#" title="twitter"><img src="images/footer-socials-02.png" alt="" />Follow on Twitter</a></li>
-                <li><a href="#" title="google plus"><img src="images/footer-socials-03.png" alt="" />Sharing on Google+</a></li>
-     			<li><a href="#" title="you tube"><img src="images/footer-socials-04.png" alt="" />Connect with Linkedin</a></li>
+                <li><a href="#" title="facebook"><img src="images/footer-socials-01.png" alt="" />Facebook</a></li>
+                <li><a href="#" title="twitter"><img src="images/footer-socials-02.png" alt="" />Twitter</a></li>
+           
                 </ul>
         </div>
         
@@ -83,8 +82,7 @@
         <div class="dh_line"></div>
         
         	<div id="flickr_badge_wrapper">
-            	<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=latest&amp;size=s&amp;layout=h&amp;source=user&amp;user=93382411%40N07"></script>
-            
+            	
             </div>
         
         </div>

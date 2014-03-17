@@ -6,7 +6,7 @@
 
 	<div class="container">
 		<div class="leaft_title"><h1>Promociones</h1></div>
-        <div class="reght_pagenation"><a href="index.php">Home</a>  <i>/</i> Prmociones</div>
+        
 	</div>
 </div><!-- end page title -->    
 
@@ -19,42 +19,36 @@
           	<ul class="gallery clearfix">
             	<li>
             		<ul class="gallery clearfix">
-                    	<li class="border_twocol"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Many desktop publishing packages</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
+                    	<li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
+                        <strong>Pizza Familiar $ 8.000</strong>
+                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
                         </li>
                         
-                        <li class="border_twocol last"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Prity have suffered alteration form</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
+                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
+                        <strong>Pizza Familiar $ 8.000</strong>
+                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
                         </li>
-                            <li class="border_twocol"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Many desktop publishing packages</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
+                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
+                        <strong>Pizza Familiar $ 8.000</strong>
+                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
                         </li>
-                        
-                        <li class="border_twocol last"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Prity have suffered alteration form</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
+                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
+                        <strong>Pizza Familiar $ 8.000</strong>
+                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
                         </li>
-                            <li class="border_twocol"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Many desktop publishing packages</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
+                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
+                        <strong>Pizza Familiar $ 8.000</strong>
+                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
                         </li>
-                        
-                        <li class="border_twocol last"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Prity have suffered alteration form</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
+                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
+                        <strong>Pizza Familiar $ 8.000</strong>
+                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
                         </li>
-                            <li class="border_twocol"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Many desktop publishing packages</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
+                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
+                        <strong>Pizza Familiar $ 8.000</strong>
+                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
                         </li>
                         
-                        <li class="border_twocol last"><a href="images/pizza1.jpeg" title="prettyPhoto"><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Prity have suffered alteration form</strong>
-                        <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some form injecte randomised words which don't look even slightly believable.</p>
-                        </li>
                         
                         
              		</ul>

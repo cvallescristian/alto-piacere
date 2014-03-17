@@ -96,15 +96,17 @@
 	opacity: 1;
 }
 .gallery li.border_twocol strong {
-	font-size: 14px;
+	font-size: 30px;
 	margin: 4px 20px 5px 20px;
 	display: block;
+	text-align: center;
 	line-height: 25px;
-	color: #454545;
+	color: #006F1B;
 }
 .gallery li.border_twocol p {
-	font-size: 12px;
+	font-size: 24px;
 	margin: 0px 20px 20px 20px;
+	text-align: center;
 	display: block;
 }
 

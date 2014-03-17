@@ -987,7 +987,7 @@ a.show_hide{
 	display: block;
 	float: left;
 	text-align: left;
-	margin: 0px 0 0 0px;
+	margin: 5px 0 0 0px;
 }
 .page_title .leaft_title h1 { 
 	font-size: 34px;
@@ -3438,9 +3438,9 @@ a.arrow1:hover {
 }
 
 .big_text1 {
-	font-family: "WalkwayBold";
+	font-family: "chocolate";
 	font-weight: normal;
-	font-size: 30px;
+	font-size: 34px;
 	line-height: 36px;
 	color: #999;
 }
@@ -3461,7 +3461,11 @@ a.arrow1:hover {
 	font-style: normal;
 }
 
-
+.mapa{
+	position: absolute;
+top: 300px;
+left: 580px;
+}
 
 ul.fullimage_box {
 	float: left;
@@ -3506,6 +3510,8 @@ ul.clients_logos_list2 {
 
 ul.arrows_list1 {
 	float: left;
+	font-size: 24px;
+	font-family: "chocolate";
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 }
@@ -3524,7 +3530,11 @@ ul.arrows_list1 {
 	background: url(../images/arrow-5.png) no-repeat left 5px;
 }
 
-
+.green{
+	color: #026913;
+	font-size: 24px;
+	font-weight: bold;
+}
 ul.list_empty {
 	float: left;
 	padding: 0px;
