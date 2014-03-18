@@ -132,14 +132,48 @@
                 <div id="menu" class="menu">
                     
                     <ul id="tiny">
-                    
-                        <li><a href="home" class="active">Home</a></li>
-                        <li><a href="cucinadautore">Cucina d` Autore</a></li>  
-                        <li><a href="menu">Menu</a></li>
-                        <li><a href="promociones">Promociones</a></li>
-                        <li><a href="galeria">Galeria Alto Piacere</a></li>
-                        <li><a href="locales">Locales</a></li>
-                        <li><a href="contacto">Contacto</a></li>
+                        <?php if ($indice==1) { ?>
+                          <li><a href="home" class="active">Home</a></li>
+                        <?php  }else{ ?>
+                            <li><a href="home" >Home</a></li>      
+                        <?php } ?>
+                        <?php if ($indice==2) { ?>
+                            <li><a href="cucinadautore" class="active">Cucina d` Autore</a></li>  
+                        <?php  }else{ ?>
+                            <li><a href="cucinadautore">Cucina d` Autore</a></li>  
+                        <?php } ?>
+                        <?php if ($indice==3) { ?>
+                            <li><a href="menu?cat=2" class="active"> Menu</a></li>
+                        <?php  }else{ ?>
+                           <li><a href="menu?cat=2">Menu</a></li>
+                        <?php } ?>
+                         <?php if ($indice==4) { ?>
+                           <li><a href="promociones" class="active">Promociones</a></li>
+                        <?php  }else{ ?>
+                          <li><a href="promociones">Promociones</a></li>
+                        <?php } ?>
+                        <?php if ($indice==5) { ?>
+                           <li><a href="galeria" class="active">Galeria Alto Piacere</a></li>
+                        <?php  }else{ ?>
+                          <li><a href="galeria">Galeria Alto Piacere</a></li>
+                        <?php } ?>
+                         <?php if ($indice==6) { ?>
+                           <li><a href="locales" class="active">Locales</a></li>
+                        <?php  }else{ ?>
+                           <li><a href="locales">Locales</a></li>
+                        <?php } ?>
+                         <?php if ($indice==7) { ?>
+                            <li><a href="contacto" class="active">Contacto</a></li>
+                        <?php  }else{ ?>
+                           <li><a href="contacto">Contacto</a></li>
+                        <?php } ?>
+                       
+                        
+                       
+                        
+                        
+                       
+                        
                     </ul>
                 </div>
                 

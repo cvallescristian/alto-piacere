@@ -19,39 +19,13 @@
           	<ul class="gallery clearfix">
             	<li>
             		<ul class="gallery clearfix">
-                    	<li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Pizza Familiar $ 8.000</strong>
-                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
+                    <?php foreach ($lista_promocion as $promocion) { ?>
+                        <li class="border_twocol"><a href="" title=""><img src="<?=base_url('images/promocion/'.$promocion->promocion_id.'.png') ?>" alt="" /></a>
+                            <strong><?= $promocion->titulo?> $<?= $promocion->precio?></strong>
+                            <p><?= $promocion->descripcion?> </p>
                         </li>
-                        
-                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Pizza Familiar $ 8.000</strong>
-                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
-                        </li>
-                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Pizza Familiar $ 8.000</strong>
-                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
-                        </li>
-                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Pizza Familiar $ 8.000</strong>
-                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
-                        </li>
-                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Pizza Familiar $ 8.000</strong>
-                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
-                        </li>
-                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Pizza Familiar $ 8.000</strong>
-                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
-                        </li>
-                        <li class="border_twocol"><a href="images/pizza1.jpeg" title=""><img src="images/pizza1.jpeg" alt="" /></a>
-                        <strong>Pizza Familiar $ 8.000</strong>
-                        <p>Pizza Americana con tres ingredientes: Champiñon, Queso, Tomate. </p>
-                        </li>
-                        
-                        
-                        
-             		</ul>
+                    <?php } ?>
+                   </ul>
          		</li>
             </ul>
           

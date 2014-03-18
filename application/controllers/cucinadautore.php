@@ -19,7 +19,8 @@ class Cucinadautore extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view("layout/header");
+		$data['indice']=2;
+		$this->load->view("layout/header",$data);
 		$this->load->view('home/cucinadautore');
 		$this->load->view("layout/footer");
 	}

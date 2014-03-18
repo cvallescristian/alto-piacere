@@ -14,7 +14,9 @@
 }
 
 
-
+li .active{
+	color:red;
+}
 /* ----------- Logo ----------- */
 #logo {
 	float: left;
@@ -1334,6 +1336,9 @@ a.show_hide{
 }
 .sidebar_widget ul.arrows_list1 li a:hover {
 	color: #ff9900;
+}
+.sidebar_widget ul.arrows_list1 li .active{
+	color:red;
 }
 
 .sidebar_widget h3 {

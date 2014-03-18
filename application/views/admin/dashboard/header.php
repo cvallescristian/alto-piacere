@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Endless Admin</title>
+    <title>Alto Piacere Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -30,7 +30,7 @@
 		<div id="top-nav" class="skin-2 fixed">
 			<div class="brand">
 				<span>Alto Piacere </span>
-				<span class="text-toggle"> Administración</span>
+				<span class="text-toggle"> Admin</span>
 			</div><!-- /brand -->
 			<button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
 				<span class="icon-bar"></span>
@@ -71,8 +71,12 @@
 			
 				<div class="main-menu">
 					<ul>
-						<li class="active">
-							<a href="index.html">
+						<?php if ($indice==1) {
+							echo "<li class='active'>";
+						}else{
+							echo "<li>";
+						} ?>
+							<a href="<?= base_url('admin/dashboard')?>">
 								<span class="menu-icon">
 									<i class="fa fa-home fa-lg"></i> 
 								</span>
@@ -82,21 +86,27 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
-
-
-						<li >
-							<a href="#">
+						<?php if ($indice==2) {
+							echo "<li class='active'>";
+						}else{
+							echo "<li>";
+						} ?>
+							<a href="<?= base_url('admin/categorias')?>">
 								<span class="menu-icon">
 									<i class="fa fa-file-text fa-lg"></i> 
 								</span>
 								<span class="text" align="justify">
-									Categorias y Promociones
+									Categorias
 								</span>
 								<span class="menu-hover"></span>
 							</a>
 						</li>
-						<li>
-							<a href="timeline.html">
+						<?php if ($indice==3) {
+							echo "<li class='active'>";
+						}else{
+							echo "<li>";
+						} ?>
+							<a href="<?= base_url('admin/productos')?>">
 								<span class="menu-icon">
 									<i class="fa fa-clock-o fa-lg"></i> 
 								</span>
@@ -106,8 +116,28 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
-						<li>
-							<a href="gallery.html">
+						<?php if ($indice==4) {
+							echo "<li class='active'>";
+						}else{
+							echo "<li>";
+						} ?>
+							<a href="<?= base_url('admin/promociones')?>">
+								<span class="menu-icon">
+									<i class="fa fa-clock-o fa-lg"></i> 
+								</span>
+								<span class="text">
+									Promociones
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
+
+						<?php if ($indice==5) {
+							echo "<li class='active'>";
+						}else{
+							echo "<li>";
+						} ?>
+							<a href="<?= base_url('admin/galeria')?>">
 								<span class="menu-icon">
 									<i class="fa fa-picture-o fa-lg"></i> 
 								</span>

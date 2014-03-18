@@ -20,14 +20,15 @@
 
 	<div class="sidebar_widget">
     	<h3>Categoria</h3>
-		<ul class="arrows_list1">		
-            <li><a href="#">Pizzas</a></li>
-            <li><a href="#">Pastas</a></li>
-            <li><a href="#">Ensaladas</a></li>
-            <li><a href="#">Agregados</a></li>
-            <li><a href="#">Bebidas</a></li>
-            <li><a href="#">Helados</a></li>
-        
+		<ul class="arrows_list1">
+          
+            <?php foreach ($lista_categoria as $categoria) { ?>
+              <?php if ($this->input->get('cat') == $categoria->categoria_id) { ?>
+                 <li class="active"><a href="<?= base_url('menu?cat='.$categoria->categoria_id)?>"><?= $categoria->nombre_categoria?></a></li>
+               <?php  }else{ ?>
+                 <li class=""><a href="<?= base_url('menu?cat='.$categoria->categoria_id)?>"><?= $categoria->nombre_categoria?></a></li>
+               <?php } ?>
+            <?php } ?>
 		</ul>
 	</div><!-- end section -->
     
@@ -41,75 +42,30 @@
 <div class="content_right">
     <div class="table-style">
                 <table class="table-list">
-                    <tbody><tr>
+                    <tbody>
+                    <tr>
                         <th>Nombre</th>
                         <th>Ingredientes</th>
                         <th>Mediana</th>
-                        <th>Familiar</th>
+                        <?php if ($this->input->get('cat')==2 || $this->input->get('cat')==0) { ?>
+                         <th>Familiar</th>
+                       <?php } ?>
                         
                     </tr>
+                    <?php foreach ($lista_producto as $producto) { ?>
                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
+                        <?php if ($this->input->get('cat')==$producto->categoria_id) { ?>
+                            <td class="green"><?= $producto->nombre_producto?></td>
+                            <td><?= $producto->ingredientes ?></td>
+                            <td>$<?= $producto->precio_producto_mediana?></td>
+                            <?php if ($this->input->get('cat')==2 || $this->input->get('cat')==0) { ?>
+                                <td>$<?= $producto->precio_producto_familiar?></td>
+                            <?php } ?>
+                        <?php } ?>
                     </tr>
-                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
-                    </tr>
-                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                       <td>$ 9000</td>
-                    </tr>
-                     <tr>
-                       <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
-                    </tr>
-                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
-                    </tr>
-                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
-                    </tr>
-                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
-                    </tr>
-                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
-                    </tr>
-                     <tr>
-                        <td class="green">Margharita</td>
-                        <td>Tomate, Queso, Albaca</td>
-                        <td>$ 6000</td>
-                        <td>$ 9000</td>
-                       
-                    </tr>
+                    <?php } ?>
+                 
+                     
                     
                 </tbody></table>
             </div>

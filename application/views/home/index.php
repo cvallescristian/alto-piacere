@@ -18,8 +18,8 @@
 							</li>
 
 							<!-- SLIDEUP -->
-							<li data-transition="slideup" data-slotamount="4" data-thumb="images/sliders/revolution/slider-bg1.jpg">
-								
+						  <li data-transition="slideup" data-slotamount="4" data-thumb="images/sliders/revolution/slider-bg1.jpg">
+                                
             
                                 
                                 <div class="caption sfb" data-x="0" data-y="0" data-speed="900" data-start="900" data-easing="easeOutSine"><img src="images/pizza.jpg" alt="" width="980" /></div>
@@ -32,14 +32,8 @@
                                 <div class="bca_rarrow"></div>
                                 </div>
 
-							</li>
-                            
-                            
-                      
-							
-
-
-						</ul>
+                            </li>
+                        </ul>
 					</div>
 				</div>
 

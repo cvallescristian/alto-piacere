@@ -19,8 +19,18 @@ class Contacto extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view("layout/header");
+		$data['indice']=7;
+		$this->load->view("layout/header",$data);
 		$this->load->view('home/contacto');
 		$this->load->view("layout/footer");
+	}
+	public function enviar(){
+		$mensaje ="El mensaje es : \n\n".$this->input->post('mensaje');
+		$to = "valles.cristian1992@gmail.com";
+		$subject = "Mensaje de contacto desde el sitio de ".$this->input->post('email');
+		mail($to,$subject,$mensaje);
+
+		echo "<script>alert('Mensaje enviado con exito')</script>";
+		redirect(base_url('contacto'),'refresh');
 	}
 }

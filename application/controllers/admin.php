@@ -2,21 +2,7 @@
 
 class Admin extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+
 	public function index()
 	{
 		$this->load->view('admin/header_admin');
@@ -34,6 +20,9 @@ class Admin extends CI_Controller {
 		if ($return == false) {
 			redirect(base_url('admin/index?err=1'),'refresh');
 		}else{
+			$this->session->all_userdata();
+			$this->session->set_userdata('user', $login->usuario_id);
+			$this->session->set_userdata('name', $login->nombre);
 			redirect(base_url('admin/dashboard'),'refresh');
 		}
 	}
@@ -51,8 +40,9 @@ class Admin extends CI_Controller {
 	}
 
 	public function dashboard(){
-		$this->load->view('admin/dashboard/header');
-		$this->load->view('admin/dashboard/index');
+		$data['indice'] = 1;
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/dashboard/index',$data);
 		$this->load->view('admin/dashboard/footer');
 	} 
 
@@ -62,6 +52,250 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/dashboard/footer');
 	}
 	public function crear_slider_action(){
-		
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$id= $this->uum->add_slide();
+		move_uploaded_file($_FILES['userfile']['tmp_name'], "images/slide/$id".".png");
+		//redirect(base_url('admin/dashboard'),'refresh');
+	}
+	public function productos(){
+
+		$data['indice'] = 3;
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$data['lista_producto']= $this->uum->list_producto();
+		$data['lista_categoria']= $this->uum->list_categoria();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/productos/index',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function producto_crear(){
+
+		$data['indice'] = 3;
+
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$data['lista_categoria']= $this->uum->list_categoria();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/productos/crear',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function producto_crear_action(){
+		$datos = array(
+			'nombre_producto' => $this->input->post('nombre_producto'),
+			'categoria_id' => $this->input->post('categoria_id'),
+			'ingredientes' => $this->input->post('ingredientes'),
+			'precio_producto' => $this->input->post('precio')
+
+		);
+
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$this->uum->crear_producto($datos);
+
+		redirect(base_url('admin/productos?sus=1'),'refresh');	
+	}
+
+	public function producto_editar(){
+		$data['indice'] = 3;
+
+		$id = $this->input->get('id');
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$data['producto']= $this->uum->get_producto($id);
+		$data['lista_categoria']= $this->uum->list_categoria();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/productos/editar',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function producto_editar_action(){
+		$id = $this->input->post('producto_id');
+		$datos = array(
+			'nombre_producto' => $this->input->post('nombre_producto'),
+			'categoria_id' => $this->input->post('categoria_id'),
+			'ingredientes' => $this->input->post('ingredientes'),
+			'precio_producto' => $this->input->post('precio')
+
+		);
+		$this->load->model('admin_model',"uum");
+		$this->uum->actualizar_producto($datos,$id);
+		redirect(base_url('admin/productos?sus=2'),'refresh');
+	}
+	public function producto_borrar(){
+		$id = $this->input->get('id');
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$this->uum->borrar_producto($id);
+		redirect(base_url('admin/productos?sus=3'),'refresh');
+	}
+	public function categorias(){
+		$data['indice'] = 2;
+
+		$id = $this->input->get('id');
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$data['lista_categoria']= $this->uum->list_categoria();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/categorias/index',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function categoria_crear(){
+		$data['indice'] = 2;
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/categorias/crear',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function categoria_crear_action(){
+		$datos = array(
+			'nombre_categoria' => $this->input->post('nombre_categoria')
+		);
+		$this->load->model('admin_model',"uum");
+		$this->uum->crear_categoria($datos);
+		redirect(base_url('admin/categorias?sus=1'),'refresh');
+	}
+	public function categoria_editar(){
+		$id = $this->input->get('id');
+		$data['indice'] = 2;
+		//cargamos la base de datos 
+		$this->load->model('admin_model',"uum");
+		$data['categoria']=$this->uum->get_categoria($id);
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/categorias/editar',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function categoria_editar_action(){
+		$id = $this->input->post('categoria_id');
+		$datos = array(
+			'nombre_categoria' => $this->input->post('nombre_categoria')
+		);
+		$this->load->model('admin_model',"uum");
+		$this->uum->actualizar_categoria($datos,$id);
+		redirect(base_url('admin/categorias?sus=2'),'refresh');
+	}
+	public function categoria_borrar(){
+		$id = $this->input->get('id');
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$this->uum->borrar_categoria($id);
+		redirect(base_url('admin/categorias?sus=3'),'refresh');
+	}
+	public function promociones(){
+		$data['indice'] = 4;
+
+		//cargamos la base de datos
+		$this->load->model('admin_model',"uum");
+		$data['lista_promociones']=$this->uum->list_promociones();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/promociones/index',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function promocion_crear(){
+		$data['indice'] = 4;
+
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$data['lista_categoria']= $this->uum->list_categoria();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/promociones/crear',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function promocion_crear_action(){
+		$datos = array(
+			'titulo' => $this->input->post('nombre_producto'),
+			'categoria_id' => $this->input->post('categoria_id'),
+			'descripcion' => $this->input->post('descripcion'),
+			'precio' => $this->input->post('precio')
+		);
+
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$id=$this->uum->crear_promocion($datos);
+		move_uploaded_file($_FILES['foto']['tmp_name'], "images/promocion/$id".".png");
+
+		redirect(base_url('admin/promociones?sus=1'),'refresh');	
+	}
+	public function promocion_editar(){
+		$id = $this->input->get('id');
+		$data['indice'] = 4;
+		//cargamos la base de datos 
+		$this->load->model('admin_model',"uum");
+		$data['promocion']=$this->uum->get_promocion($id);
+		$data['lista_categoria']= $this->uum->list_categoria();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/promociones/editar',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function promocion_editar_action(){
+		$datos = array(
+			'titulo' => $this->input->post('nombre_producto'),
+			'categoria_id' => $this->input->post('categoria_id'),
+			'descripcion' => $this->input->post('descripcion'),
+			'precio' => $this->input->post('precio')
+		);
+
+		//cargamos el modelo
+		$id=$this->input->post('promocion_id');
+		$this->load->model('admin_model',"uum");
+		$this->uum->actualizar_promocion($datos,$id);
+		move_uploaded_file($_FILES['foto']['tmp_name'], "images/promocion/$id".".png");
+
+		redirect(base_url('admin/promociones?sus=2'),'refresh');	
+	}
+	public function promocion_borrar(){
+		$id = $this->input->get('id');
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$this->uum->borrar_promocion($id);
+		redirect(base_url('admin/promociones?sus=3'),'refresh');
+	}
+	public function galeria(){
+		$data['indice'] = 5;
+
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$data['lista_galeria']= $this->uum->list_galeria();
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/galeria/index',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function galeria_crear(){
+		$data['indice'] = 5;
+
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/galeria/crear',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function galeria_crear_action(){
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$id=$this->uum->crear_galeria();
+		move_uploaded_file($_FILES['photo']['tmp_name'], "images/galeria/$id".".png");
+		redirect(base_url('admin/galeria'),'refresh');
+	}
+	public function galeria_editar(){
+		$data['indice'] = 5;
+
+		//cargamos el modelo
+		$this->load->model('admin_model',"uum");
+		$data['galeria_id']=$this->input->get('id');
+		$this->load->view('admin/dashboard/header',$data);
+		$this->load->view('admin/galeria/editar',$data);
+		$this->load->view('admin/dashboard/footer');
+	}
+	public function galeria_editar_action(){
+		$id=$this->input->post('galeria_id');
+		move_uploaded_file($_FILES['photo']['tmp_name'], "images/galeria/$id".".png");
+
+		redirect(base_url('admin/galeria?sus=2'),'refresh');	
+	}
+	public function galeria_borrar(){
+		//cargamos el modelo
+		$id = $this->input->get('id');
+		$this->load->model('admin_model',"uum");
+		$this->uum->galeria_borrar($id);
+		redirect(base_url('admin/galeria?sus=3'),'refresh');
 	}
 }

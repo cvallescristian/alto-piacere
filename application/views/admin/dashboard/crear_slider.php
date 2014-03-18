@@ -18,7 +18,7 @@
 					<div class="form-group">
 						<label class="control-label col-lg-3">Inserte la Foto</label>
 						<div class="col-lg-9">
-							<input type="file" name="photo" class="form-control input-sm parsley-validated" required>
+							<input type="file" name="userfile" id="userfile" class="form-control input-sm parsley-validated" required>
 							 <p class="help-block">La foto debe ser de 980px por 793px y debe contener toda la información de la promoción dentro.</p>
 					
 						</div><!-- /.col -->

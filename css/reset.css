@@ -32,7 +32,9 @@ vertical-align: baseline;
 background: transparent;
 }
 
-
+li .active{
+	color:red;
+}
 
 
 

@@ -19,8 +19,13 @@ class Menu extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view("layout/header");
-		$this->load->view('home/menu');
-		$this->load->view("layout/footer");
+		//cargamos el modelo
+		$data['indice']=3;
+		$this->load->model("admin_model","uum");
+		$data['lista_categoria']=$this->uum->list_categoria();
+		$data['lista_producto']= $this->uum->list_producto();
+		$this->load->view("layout/header",$data);
+		$this->load->view('home/menu',$data);
+		$this->load->view("layout/footer",$data);
 	}
 }

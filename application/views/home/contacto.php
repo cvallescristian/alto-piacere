@@ -25,30 +25,21 @@
             
             <h2>Formulario de contacto</h2>
         
-                    <form action="" method="post">
+                    <form action="<?= base_url('contacto/enviar')?>" method="post">
                     
                         <fieldset>
                     
                         
-                        <label for="name" class="blocklabel">Tu Nombre*</label>
-                        <p class="" ><input name="yourname" class="input_bg" type="text" id="name" value=''/></p>
-                        
                         
                         <label for="email" class="blocklabel">E-Mail*</label>
-                        <p class="" ><input name="email" class="input_bg" type="text" id="email" value='' /></p>
-                        
-                        
-                        <label for="website" class="blocklabel">Asunto</label>
-                        <p><input name="website" class="input_bg" type="text" id="website" value=""/></p>
+                        <p class="" ><input name="email" class="input_bg" type="text" id="email" value='' required/></p>
                         
                         
                         <label for="message" class="blocklabel">Tu Mensaje*</label>
-                        <p class=""><textarea name="message" class="textarea_bg" id="message" cols="20" rows="7" ></textarea></p>
+                        <p class=""><textarea name="mensaje" class="textarea_bg" id="message" cols="20" rows="7" required></textarea></p>
                         
                         
                         <p>
-                        <input type="hidden" id="myemail" name="myemail" value="" />
-                        <input type="hidden" id="myblogname" name="myblogname" value="" />
                         <div class="clearfix"></div>
                         <input name="Send" type="submit" value="Enviar" class="button medium align" id="send"/></p>
                        

@@ -19,7 +19,8 @@ class Locales extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view("layout/header");
+		$data['indice']=6;
+		$this->load->view("layout/header",$data);
 		$this->load->view('home/locales');
 		$this->load->view("layout/footer");
 	}
