@@ -43,7 +43,7 @@
 		
 				<li class="profile dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-						<strong>Hola Pablo@metpizza.cl</strong>
+						<strong>Hola <?= $this->session->userdata('nombre')?></strong>
 						<span><i class="fa fa-chevron-down"></i></span>
 					</a>
 					
@@ -93,7 +93,7 @@
 						} ?>
 							<a href="<?= base_url('admin/categorias')?>">
 								<span class="menu-icon">
-									<i class="fa fa-file-text fa-lg"></i> 
+									<i class="fa fa-check fa-lg"></i> 
 								</span>
 								<span class="text" align="justify">
 									Categorias
@@ -108,7 +108,7 @@
 						} ?>
 							<a href="<?= base_url('admin/productos')?>">
 								<span class="menu-icon">
-									<i class="fa fa-clock-o fa-lg"></i> 
+									<i class="fa fa-glass fa-lg"></i> 
 								</span>
 								<span class="text">
 									Listado de Productos
@@ -123,7 +123,7 @@
 						} ?>
 							<a href="<?= base_url('admin/promociones')?>">
 								<span class="menu-icon">
-									<i class="fa fa-clock-o fa-lg"></i> 
+									<i class="fa fa-shopping-cart fa-lg"></i> 
 								</span>
 								<span class="text">
 									Promociones
@@ -147,6 +147,22 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
+						<?php if ($this->session->userdata('tipo')==1) { ?>
+							<?php if ($indice==6) {
+							echo "<li class='active'>";
+						}else{
+							echo "<li>";
+						} ?>
+							<a href="<?= base_url('admin/user')?>">
+								<span class="menu-icon">
+									<i class="fa fa-user fa-lg"></i> 
+								</span>
+								<span class="text">
+									Administración
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						<?php } ?>
 						
 					</ul>
 					

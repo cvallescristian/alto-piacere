@@ -1,49 +1,49 @@
 <div id="main-container">
 	<div id="breadcrumb">
 		<ul class="breadcrumb">
-			 <li><i class="fa fa-home"></i><a href="index.html"> Home</a></li>
-			 <li class="active">Dashboard</li>	 
+			 <li><i class="fa fa-home"></i><a href="<?= base_url('admins/dashboard')?>"> Inicio</a></li>
 		</ul>
 	</div><!-- breadcrumb -->
 
 	<div class="main-header clearfix" align="center">
 		<div class="page-title">
-			<h3 class="no-margin">Dashboard</h3>
-			<span>Bienvenido de nuevo pablo@metpizza.cl</span>
+			<h3 class="no-margin">Inicio</h3>
+			<span>Bienvenido de nuevo <?= $this->session->userdata('nombre')?></span>
 		</div><!-- /page-title -->
 	</div>
 
 	<div class="grey-container shortcut-wrapper">
-				<a href="#" class="shortcut-link">
+				<a href="<?= base_url('admin/dashboard')?>" class="shortcut-link">
 					<span class="shortcut-icon">
 						<i class="fa fa-home"></i>
 					</span>
 					<span class="text">Inicio</span>
 				</a>
-				<a href="#" class="shortcut-link">
+				<a href="<?= base_url('admin/categorias')?>" class="shortcut-link">
 					<span class="shortcut-icon">
-						<i class="fa fa-envelope-o"></i>
-						<span class="shortcut-alert">
-							5
-						</span>	
+						<i class="fa fa-check"></i>
 					</span>
-					<span class="text">Categorias y Promociones</span>
+					<span class="text">Categorias</span>
 				</a>
-				<a href="#" class="shortcut-link">
+				<a href="<?= base_url('admin/productos')?>" class="shortcut-link">
 					<span class="shortcut-icon">
-						<i class="fa fa-user"></i>
+						<i class="fa fa-glass"></i>
 					</span>
-					<span class="text">Listado de productos</span>
+					<span class="text">Productos</span>
 				</a>
-				<a href="#" class="shortcut-link">
+				<a href="<?= base_url('admin/promociones')?>" class="shortcut-link">
 					<span class="shortcut-icon">
-						<i class="fa fa-globe"></i>
-						<span class="shortcut-alert">
-							7
-						</span>	
+						<i class="fa fa-shopping-cart"></i>
 					</span>
-					<span class="text">Galería de Fotos</span>
+					<span class="text">Promociones</span>
 				</a>
+				<a href="<?= base_url('admin/galeria')?>" class="shortcut-link">
+					<span class="shortcut-icon">
+						<i class="fa fa-picture-o"></i>
+					</span>
+					<span class="text">Galeria</span>
+				</a>
+				
 				
 	</div>
 
@@ -88,14 +88,3 @@
 
 </div><!-- /main-container -->
 
-<!-- Logout confirmation -->
-	<div class="custom-popup width-100" id="NuevoSlider">
-		<div class="padding-md">
-			<h4 class="m-top-none">Estás segdkflskdAdministración?</h4>
-		</div>
-
-		<div class="text-center">
-			<a class="btn btn-success m-right-sm" href="login.html">Salir de Admin</a>
-			<a class="btn btn-danger logoutConfirm_close">Cancelar</a>
-		</div>
-	</div>

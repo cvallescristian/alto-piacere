@@ -11,7 +11,7 @@ class Admin_model extends CI_Model{
 		if ($query->num_rows()==0) {
 			return false;
 		}else{
-			return true;
+			return $query->row();
 		}
 	}
 	function add_slide(){
@@ -115,5 +115,19 @@ class Admin_model extends CI_Model{
 	function galeria_borrar($id){
 		$this->db->where('galeria_id',$id);
 		$this->db->delete('Galeria');	
+	}
+	function list_user(){
+		$query = $this->db->query("SELECT * FROM Administrador");
+		return $query->result();
+	}
+	function crear_user($datos){
+		$this->db->trans_start();
+		$this->db->insert('Administrador',$datos);
+		$insert_id = $this->db->insert_id();
+   		$this->db->trans_complete();
+	}
+	function borrar_user($id){
+		$this->db->where('administrador_id',$id);
+		$this->db->delete('Administrador');
 	}
 }

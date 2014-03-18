@@ -9,7 +9,7 @@
 		</div>
 
 		<div class="text-center">
-			<a class="btn btn-success m-right-sm" href="login.html">Salir de Admin</a>
+			<a class="btn btn-success m-right-sm" href="<?= base_url('admin/logout')?>">Salir de Admin</a>
 			<a class="btn btn-danger logoutConfirm_close">Cancelar</a>
 		</div>
 	</div>

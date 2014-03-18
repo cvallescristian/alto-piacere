@@ -5,9 +5,13 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/header_admin');
-		$this->load->view('admin/index');
-		$this->load->view('admin/footer_admin');
+		if ($this->session->userdata('id')!=null) {
+			redirect(base_url('admin/dashboard'),'refresh');
+		}else{
+			$this->load->view('admin/header_admin');
+			$this->load->view('admin/index');
+			$this->load->view('admin/footer_admin');
+		}
 	}
 	public function login(){
 		$email = $this->input->post('email');
@@ -21,10 +25,20 @@ class Admin extends CI_Controller {
 			redirect(base_url('admin/index?err=1'),'refresh');
 		}else{
 			$this->session->all_userdata();
-			$this->session->set_userdata('user', $login->usuario_id);
-			$this->session->set_userdata('name', $login->nombre);
+			$this->session->set_userdata('id', $return->administrador_id);
+			$this->session->set_userdata('nombre', $return->nombre);
+			$this->session->set_userdata('email', $return->email);
+			$this->session->set_userdata('tipo', $return->admin);
 			redirect(base_url('admin/dashboard'),'refresh');
 		}
+	}
+	public function logout(){
+		$this->session->all_userdata();
+		$this->session->unset_userdata('id');
+		$this->session->unset_userdata('nombre');
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('tipo');
+		redirect(base_url('admin'),'refresh');
 	}
 	
 	public function zeus(){ //para registrar un administrador
@@ -40,16 +54,25 @@ class Admin extends CI_Controller {
 	}
 
 	public function dashboard(){
-		$data['indice'] = 1;
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/dashboard/index',$data);
-		$this->load->view('admin/dashboard/footer');
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 1;
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/dashboard/index',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	} 
 
 	public function crear_slider(){
-		$this->load->view('admin/dashboard/header');
-		$this->load->view('admin/dashboard/crear_slider');
-		$this->load->view('admin/dashboard/footer');
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice']=1;
+			$this->load->view('admin/dashboard/header');
+			$this->load->view('admin/dashboard/crear_slider');
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function crear_slider_action(){
 		//cargamos el modelo
@@ -59,26 +82,33 @@ class Admin extends CI_Controller {
 		//redirect(base_url('admin/dashboard'),'refresh');
 	}
 	public function productos(){
-
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
 		$data['indice'] = 3;
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
-		$data['lista_producto']= $this->uum->list_producto();
-		$data['lista_categoria']= $this->uum->list_categoria();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/productos/index',$data);
-		$this->load->view('admin/dashboard/footer');
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
+			$data['lista_producto']= $this->uum->list_producto();
+			$data['lista_categoria']= $this->uum->list_categoria();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/productos/index',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
+
 	public function producto_crear(){
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 3;
 
-		$data['indice'] = 3;
-
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
-		$data['lista_categoria']= $this->uum->list_categoria();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/productos/crear',$data);
-		$this->load->view('admin/dashboard/footer');
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
+			$data['lista_categoria']= $this->uum->list_categoria();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/productos/crear',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function producto_crear_action(){
 		$datos = array(
@@ -97,16 +127,20 @@ class Admin extends CI_Controller {
 	}
 
 	public function producto_editar(){
-		$data['indice'] = 3;
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 3;
 
-		$id = $this->input->get('id');
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
-		$data['producto']= $this->uum->get_producto($id);
-		$data['lista_categoria']= $this->uum->list_categoria();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/productos/editar',$data);
-		$this->load->view('admin/dashboard/footer');
+			$id = $this->input->get('id');
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
+			$data['producto']= $this->uum->get_producto($id);
+			$data['lista_categoria']= $this->uum->list_categoria();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/productos/editar',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function producto_editar_action(){
 		$id = $this->input->post('producto_id');
@@ -129,21 +163,29 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/productos?sus=3'),'refresh');
 	}
 	public function categorias(){
-		$data['indice'] = 2;
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 2;
 
-		$id = $this->input->get('id');
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
-		$data['lista_categoria']= $this->uum->list_categoria();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/categorias/index',$data);
-		$this->load->view('admin/dashboard/footer');
+			$id = $this->input->get('id');
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
+			$data['lista_categoria']= $this->uum->list_categoria();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/categorias/index',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function categoria_crear(){
-		$data['indice'] = 2;
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/categorias/crear',$data);
-		$this->load->view('admin/dashboard/footer');
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 2;
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/categorias/crear',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function categoria_crear_action(){
 		$datos = array(
@@ -154,14 +196,18 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/categorias?sus=1'),'refresh');
 	}
 	public function categoria_editar(){
-		$id = $this->input->get('id');
-		$data['indice'] = 2;
-		//cargamos la base de datos 
-		$this->load->model('admin_model',"uum");
-		$data['categoria']=$this->uum->get_categoria($id);
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/categorias/editar',$data);
-		$this->load->view('admin/dashboard/footer');
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$id = $this->input->get('id');
+			$data['indice'] = 2;
+			//cargamos la base de datos 
+			$this->load->model('admin_model',"uum");
+			$data['categoria']=$this->uum->get_categoria($id);
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/categorias/editar',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function categoria_editar_action(){
 		$id = $this->input->post('categoria_id');
@@ -180,24 +226,32 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/categorias?sus=3'),'refresh');
 	}
 	public function promociones(){
-		$data['indice'] = 4;
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 4;
 
-		//cargamos la base de datos
-		$this->load->model('admin_model',"uum");
-		$data['lista_promociones']=$this->uum->list_promociones();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/promociones/index',$data);
-		$this->load->view('admin/dashboard/footer');
+			//cargamos la base de datos
+			$this->load->model('admin_model',"uum");
+			$data['lista_promociones']=$this->uum->list_promociones();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/promociones/index',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function promocion_crear(){
-		$data['indice'] = 4;
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 4;
 
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
-		$data['lista_categoria']= $this->uum->list_categoria();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/promociones/crear',$data);
-		$this->load->view('admin/dashboard/footer');
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
+			$data['lista_categoria']= $this->uum->list_categoria();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/promociones/crear',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function promocion_crear_action(){
 		$datos = array(
@@ -215,15 +269,19 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/promociones?sus=1'),'refresh');	
 	}
 	public function promocion_editar(){
-		$id = $this->input->get('id');
-		$data['indice'] = 4;
-		//cargamos la base de datos 
-		$this->load->model('admin_model',"uum");
-		$data['promocion']=$this->uum->get_promocion($id);
-		$data['lista_categoria']= $this->uum->list_categoria();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/promociones/editar',$data);
-		$this->load->view('admin/dashboard/footer');
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$id = $this->input->get('id');
+			$data['indice'] = 4;
+			//cargamos la base de datos 
+			$this->load->model('admin_model',"uum");
+			$data['promocion']=$this->uum->get_promocion($id);
+			$data['lista_categoria']= $this->uum->list_categoria();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/promociones/editar',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function promocion_editar_action(){
 		$datos = array(
@@ -249,24 +307,32 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/promociones?sus=3'),'refresh');
 	}
 	public function galeria(){
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
 		$data['indice'] = 5;
 
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
-		$data['lista_galeria']= $this->uum->list_galeria();
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/galeria/index',$data);
-		$this->load->view('admin/dashboard/footer');
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
+			$data['lista_galeria']= $this->uum->list_galeria();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/galeria/index',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function galeria_crear(){
-		$data['indice'] = 5;
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 5;
 
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
 
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/galeria/crear',$data);
-		$this->load->view('admin/dashboard/footer');
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/galeria/crear',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
 	}
 	public function galeria_crear_action(){
 		//cargamos el modelo
@@ -276,14 +342,19 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/galeria'),'refresh');
 	}
 	public function galeria_editar(){
-		$data['indice'] = 5;
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 5;
 
-		//cargamos el modelo
-		$this->load->model('admin_model',"uum");
-		$data['galeria_id']=$this->input->get('id');
-		$this->load->view('admin/dashboard/header',$data);
-		$this->load->view('admin/galeria/editar',$data);
-		$this->load->view('admin/dashboard/footer');
+			//cargamos el modelo
+			$this->load->model('admin_model',"uum");
+			$data['galeria_id']=$this->input->get('id');
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/galeria/editar',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
+
 	}
 	public function galeria_editar_action(){
 		$id=$this->input->post('galeria_id');
@@ -297,5 +368,46 @@ class Admin extends CI_Controller {
 		$this->load->model('admin_model',"uum");
 		$this->uum->galeria_borrar($id);
 		redirect(base_url('admin/galeria?sus=3'),'refresh');
+	}
+	public function user(){
+		if ($this->session->userdata('id')==null || $this->session->userdata('tipo')!=1) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 6;
+
+			//cargamos la base de datos
+			$this->load->model('admin_model',"uum");
+			$data['lista_user']=$this->uum->list_user();
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/user/index',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
+	}
+	public function user_crear(){
+		if ($this->session->userdata('id')==null || $this->session->userdata('tipo')!=1) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice'] = 6;
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/user/crear',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
+	}
+	public function user_crear_action(){
+		$p= md5($this->input->post('password'));
+		$datos = array(
+			'nombre' => $this->input->post('nombre'),
+			'email' => $this->input->post('email')
+		);
+		//cargamos la base de datos
+		$this->load->model('admin_model',"uum");
+		$this->uum->crear_user($datos);
+		redirect(base_url('admin/user'),'refresh');
+	}
+	public function user_borrar(){
+		$id = $this->input->get('id');
+		$this->load->model('admin_model',"uum");
+		$this->uum->borrar_user($id);
+		redirect(base_url('admin/user'),'refresh');
 	}
 }
