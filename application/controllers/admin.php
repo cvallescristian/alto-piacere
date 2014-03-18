@@ -397,7 +397,8 @@ class Admin extends CI_Controller {
 		$p= md5($this->input->post('password'));
 		$datos = array(
 			'nombre' => $this->input->post('nombre'),
-			'email' => $this->input->post('email')
+			'email' => $this->input->post('email'),
+			'password' => $p
 		);
 		//cargamos la base de datos
 		$this->load->model('admin_model',"uum");
