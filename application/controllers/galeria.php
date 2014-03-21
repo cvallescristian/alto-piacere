@@ -25,6 +25,6 @@ class Galeria extends CI_Controller {
 		$data['lista_galeria']= $this->uum->list_galeria();
 		$this->load->view("layout/header",$data);
 		$this->load->view('home/galeria',$data);
-		$this->load->view("layout/footer");
+		
 	}
 }
