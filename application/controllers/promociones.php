@@ -25,6 +25,6 @@ class Promociones extends CI_Controller {
 		$data['lista_promocion']= $this->uum->list_promociones();
 		$this->load->view("layout/header",$data);
 		$this->load->view('home/promociones',$data);
-		$this->load->view("layout/footer");
+
 	}
 }
