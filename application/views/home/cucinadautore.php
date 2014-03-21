@@ -29,7 +29,7 @@
         <div class="left">
         <p>No dudes en consultarnos a traves de nuestro formulario de contacto.</p>
         </div>
-        <div class="right"><a href="#" class="knowmore_but">Contactanos</a></div>
+        <div class="right"><a href="contacto" class="knowmore_but">Contactanos</a></div>
     </div>
     
     <div class="clearfix mar_top3"></div>
