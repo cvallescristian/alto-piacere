@@ -29,9 +29,28 @@ class Admin_model extends CI_Model{
 		$query = $this->db->query("SELECT * FROM Categoria ");
 		return $query->result();
 	}
+	function crear_horario($datos){
+		$this->db->insert("Horario",$datos);
+	}
+	function borrar_horario($id){
+		$this->db->where("horario_id",$id);
+		$this->db->delete("Horario");
+	}
+	function list_horario(){
+		$query = $this->db->query("SELECT * FROM Horario");
+		return $query->result();
+	}
 	function list_producto(){
 		$query = $this->db->query("SELECT * FROM Producto,Categoria WHERE Producto.categoria_id=Categoria.categoria_id");
 		return $query->result();
+	}
+	function get_info(){
+		$query = $this->db->query("SELECT * FROM Informacion WHERE informacion_id='1' LIMIT 1");
+		return $query->row();
+	}
+	function editar_info($datos){
+		$this->db->where("informacion_id","1");
+		$this->db->update("Informacion",$datos);
 	}
 	function crear_producto($datos){
 		$this->db->trans_start();

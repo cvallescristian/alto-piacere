@@ -58,6 +58,11 @@ class Admin extends CI_Controller {
 			redirect(base_url('admin'),'refresh');
 		}else{
 			$data['indice'] = 1;
+
+			//cargamos el modelo
+			$this->load->model("admin_model","uum");
+			$data['informacion']= $this->uum->get_info();
+			$data['lista_horario']= $this->uum->list_horario();
 			$this->load->view('admin/dashboard/header',$data);
 			$this->load->view('admin/dashboard/index',$data);
 			$this->load->view('admin/dashboard/footer');
@@ -69,17 +74,85 @@ class Admin extends CI_Controller {
 			redirect(base_url('admin'),'refresh');
 		}else{
 			$data['indice']=1;
-			$this->load->view('admin/dashboard/header');
-			$this->load->view('admin/dashboard/crear_slider');
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/dashboard/crear_slider',$data);
 			$this->load->view('admin/dashboard/footer');
 		}
 	}
+	
 	public function crear_slider_action(){
 		//cargamos el modelo
 		$this->load->model('admin_model',"uum");
 		$id= $this->uum->add_slide();
 		move_uploaded_file($_FILES['userfile']['tmp_name'], "images/slide/$id".".png");
 		//redirect(base_url('admin/dashboard'),'refresh');
+	}
+	public function editar_slider_grande(){
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice']=1;
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/dashboard/editar_slider_grande',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
+	}
+	public function editar_slider_grande_action(){
+	move_uploaded_file($_FILES['userfile']['tmp_name'], "images/slide/grande/foto.png");
+	redirect(base_url('admin/dashboard?sus=7'),'refresh');
+	}
+	public function editar_slider_chico(){
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice']=1;
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/dashboard/editar_slider_chico',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
+	}
+	public function editar_slider_chico_action(){
+		$id = $this->input->post('id');
+		move_uploaded_file($_FILES['userfile']['tmp_name'], "images/slide/chico/foto".$id.".png");
+		redirect(base_url('admin/dashboard?sus=7'),'refresh');
+	}
+	public function borrar_horario(){
+		$id= $this->input->get('id');
+		//cargamos el modelo
+		$this->load->model("admin_model","uum");
+		$this->uum->borrar_horario($id);
+		redirect(base_url('admin/dashboard?sus=4'),'refresh');
+	}
+	public function crear_horario(){
+		if ($this->session->userdata('id')==null) {
+			redirect(base_url('admin'),'refresh');
+		}else{
+			$data['indice']=1;
+			$this->load->view('admin/dashboard/header',$data);
+			$this->load->view('admin/dashboard/crear_horario',$data);
+			$this->load->view('admin/dashboard/footer');
+		}
+	}
+	public function crear_horario_action(){
+		$datos = array(
+			'desde_dia' => $this->input->post('desde_dia'),
+			'hasta_dia' => $this->input->post('hasta_dia'),
+			'desde_hora' => $this->input->post('desde_hora'),
+			'hasta_hora' => $this->input->post('hasta_hora')
+		);
+		//cargamos el modelo
+		$this->load->model("admin_model","uum");
+		$this->uum->crear_horario($datos);
+		redirect(base_url('admin/dashboard?sus=3'),'refresh');
+	}
+	public function editar_informacion_action(){
+		$this->load->model("admin_model","uum");
+		$datos = array(
+			'telefono' => $this->input->post('telefono')
+			
+		);
+		$this->uum->editar_info($datos);
+		redirect(base_url('admin/dashboard?sus=5'),'refresh');
 	}
 	public function productos(){
 		if ($this->session->userdata('id')==null) {
