@@ -27,11 +27,11 @@
     
     <!-- ######### CSS STYLES ######### -->
 	
-    <link rel="stylesheet" href="<?= base_url(); ?>css/reset.css" type="text/css" />
-	<link rel="stylesheet" href="<?= base_url(); ?>css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
     
     <!-- responsive devices styles -->
-	<link rel="stylesheet" media="screen" href="<?= base_url(); ?>css/responsive-leyouts.css" type="text/css" />  
+	<link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />  
 
 <!-- just remove the below comments witch color skin you want to use -->
     <!--<link rel="stylesheet" href="css/colors/lightblue.css" />-->

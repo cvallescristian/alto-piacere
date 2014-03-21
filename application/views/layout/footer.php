@@ -132,7 +132,8 @@
 </script>
 
 <script type="text/javascript" src="js/accordion/custom.js"></script>
-
+<!-- portfolio -->
+<script src="js/portfolio/jquery.prettyPhoto.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
