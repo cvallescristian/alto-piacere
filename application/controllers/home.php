@@ -20,6 +20,8 @@ class Home extends CI_Controller {
 	public function index()
 	{	
 		$data['indice']=1;
+		$this->load->model("admin_model","uum");
+		$data['informacion']= $this->uum->get_info();
 		$this->load->view("layout/header",$data);
 		$this->load->view('home/index');
 		$this->load->view("layout/footer");

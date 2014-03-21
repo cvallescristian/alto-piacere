@@ -22,6 +22,7 @@ class Promociones extends CI_Controller {
 		$data['indice']=4;
 		//cargamos el modelo
 		$this->load->model('admin_model','uum');
+		$data['informacion']= $this->uum->get_info();
 		$data['lista_promocion']= $this->uum->list_promociones();
 		$this->load->view("layout/header",$data);
 		$this->load->view('home/promociones',$data);

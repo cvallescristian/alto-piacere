@@ -22,6 +22,8 @@ class Galeria extends CI_Controller {
 		$data['indice']=5;
 		//cargamos el modelo
 		$this->load->model('admin_model','uum');
+
+		$data['informacion']= $this->uum->get_info();
 		$data['lista_galeria']= $this->uum->list_galeria();
 		$this->load->view("layout/header",$data);
 		$this->load->view('home/galeria',$data);

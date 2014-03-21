@@ -24,6 +24,7 @@ class Menu extends CI_Controller {
 		$this->load->model("admin_model","uum");
 		$data['lista_categoria']=$this->uum->list_categoria();
 		$data['lista_producto']= $this->uum->list_producto();
+		$data['informacion']= $this->uum->get_info();
 		$this->load->view("layout/header",$data);
 		$this->load->view('home/menu',$data);
 		$this->load->view("layout/footer",$data);

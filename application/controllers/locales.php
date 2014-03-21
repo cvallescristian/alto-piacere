@@ -20,6 +20,8 @@ class Locales extends CI_Controller {
 	public function index()
 	{
 		$data['indice']=6;
+		$this->load->model("admin_model","uum");
+		$data['informacion']= $this->uum->get_info();
 		$this->load->view("layout/header",$data);
 		$this->load->view('home/locales');
 		$this->load->view("layout/footer");

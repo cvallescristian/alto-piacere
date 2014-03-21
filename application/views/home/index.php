@@ -22,7 +22,7 @@
                                 
             
                                 
-                                <div class="caption sfb" data-x="0" data-y="0" data-speed="900" data-start="900" data-easing="easeOutSine"><img src="images/pizza.jpg" alt="" width="980" /></div>
+                                <div class="caption sfb" data-x="0" data-y="0" data-speed="900" data-start="900" data-easing="easeOutSine"><img src="images/slide/grande/foto.png" alt="" width="980" /></div>
                                 
                                 <div class="caption sfl big_cont_area" data-x="0" data-y="365" data-speed="900" data-start="1800" data-easing="easeOutExpo">
                                 <div class="caption lfb small_white_nob"  data-x="30" data-y="25" data-speed="900" data-start="2500" data-easing="easeOutExpo">Las mejores Pizzas y Pastas</div>
@@ -49,21 +49,21 @@
 	
     <div class="one_fourth">
     	
-        	<img src="images/promos/promo1.jpg">
+        	<img src="images/slide/chico/foto1.png">
     	
 
     </div><!-- end section -->
     
     <div class="one_fourth">
-    <img src="images/promos/promo2.jpg">
+    <img src="images/slide/chico/foto2.png">
     </div><!-- end section -->
     
     <div class="one_fourth">
-    	<img src="images/promos/promo3.jpg">
+    	<img src="images/slide/chico/foto3.png">
     </div><!-- end section -->
     
     <div class="one_fourth last">
-    <img src="images/promos/promo1.jpg">
+    <img src="images/slide/chico/foto4.png">
     </div><!-- end section -->
 
 </div><!-- end services one -->
